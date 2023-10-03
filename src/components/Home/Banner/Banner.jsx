@@ -90,7 +90,7 @@ const Banner = () => {
     
     
     >
-        <div className="content">
+        {/* <div className="content">
             <div className="text-content">
                 <h1>Sales</h1>
                 <p> a complete ecommerce website from scratch,
@@ -104,7 +104,7 @@ const Banner = () => {
                 </div>
             </div>
             <img className="banner-img" src={headphone} alt="" />
-        </div>
+        </div> */}
         {/* <div className="content">
             <div className="text-content">
                 <h1>Sales</h1>
