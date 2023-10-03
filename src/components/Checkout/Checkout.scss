@@ -1,0 +1,170 @@
+@import "../../css-config/mixins.scss";
+
+.checkout-panel {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    
+    // z-index: 10000;
+
+    
+
+    .checkout-content {
+        width: 100%;
+        height: 100%;
+        background: white;
+        position: relative;
+        // z-index: 100000;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        animation: slideCartWindow 0.3s ease forwards;
+        overflow-y: auto;
+        overflow: hidden;
+        @include md {
+            width: 75%;
+        }
+
+        .checkout-header {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 20px 15px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+            .checkout-heading {
+                flex-grow: 1;
+                text-align: center;
+                margin-bottom: 0;
+                font-size: 25px;
+                font-weight: 700;
+                text-transform: uppercase;
+                @include md{
+                    font-size: 36px;
+                }
+            }
+        }
+
+        .checkout-footer{
+            border-top:1px solid rgba(0, 0, 0, 0.1);
+            .checkout-subtotal{
+                padding: 20px 15px;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                display: flex;
+                justify-content:space-between;
+                @include md {
+                    padding: 20px 105px;
+                    // width: 400px;
+                }
+                .checkout-text{
+                    border:1px solid rgba(0, 0, 0, 0.1);
+                    margin-bottom: 0;
+                    font-size: 20px;
+                    font-weight: 700;
+                    text-transform: uppercase;
+                    .checkout-total{
+                        color: #8e2de2;
+                    }
+                }
+
+            }
+            .button{
+                padding: 20px 15px;
+                .checkout-cta{
+                    outline: 0;
+                    border: 0;
+                    height: 50px;
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                    font-size: 16px;
+                    color: white;
+                    background: #8e2de2;
+                    border-bottom: 3px solid #6516aa;
+                }
+            }
+        }
+        .Shipping-header{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            // margin-bottom: 50px;
+            margin: 50px;
+            @include md{
+                width: 100%;
+                flex-direction: row;
+
+            }
+         h1{
+            color: #ef1400;
+            font-size: 28px;
+        }
+        .address-content{
+            border: 1px solid rgba(0, 0, 0, 0.3);
+            .address-radio-field{
+                width: 100%;
+                border-bottom:1px solid rgba(0, 0, 0, 0.3);
+                margin: 0;
+                padding:5px;
+                display: flex;
+                @include md{
+
+                    padding: 15px;
+                }
+            
+                .input-radio{
+                    background-color: rgb(239,20,0);
+                    padding: 5px;
+                    font-size: 15px;
+                }
+                .address-description{
+                    // margin: 5px;
+                    padding-left:15px ;
+                    // border-left:1px solid #6516aa;
+                }
+            }
+            .selected-address{
+                background-color: #e0e0e0;
+                font-weight: bold;
+            }
+        }
+
+        
+    }
+    .Add-Address-button{
+        outline: 0;
+        border: 0;
+        
+        height: 50px;
+        width: 50%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        font-size: 16px;
+        color: white;
+        background: #ef1400;
+        border-bottom: 3px solid #c51605;
+        margin-bottom: 50px;
+}
+    }
+}
+
+
+@keyframes slideCartWindow {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0%);
+    }
+
+}

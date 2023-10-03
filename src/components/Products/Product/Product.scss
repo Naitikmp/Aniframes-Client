@@ -1,0 +1,68 @@
+@import "../../../css-config/mixins.scss";
+.product-card {
+    cursor: pointer;
+    width: calc(50% - 5px);
+    margin-bottom: 20px;
+    @include md {
+        width: calc(25% - 15px);
+    }
+    .thumbnail {
+        width: 100%;
+        height: 180px;
+        // background-color: rgba(0, 0, 0, 0.05);
+        margin-bottom: 10px;
+        padding: 25px;
+        display: flex;
+        align-items: center;
+        // border-bottom:0.5px solid rgba(0,0,0,0.2);
+        @include md {
+            height: 350px;
+        }
+        img {
+            transition: all ease 0.3s;
+            display: block;
+            width: 100%;
+            box-shadow: 0 5px 15px #818181;
+        }
+    }
+    .prod-details {
+        text-align: center;
+        .name {
+            font-size: 14px;
+            display: block;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            // border-bottom:0.5px solid rgba(0,0,0,0.2);
+            @include md {
+                font-size: 16px;
+                margin-bottom: 10px;
+            }
+        }
+        .price {
+            font-size: 18px;
+            color: #ef1400;
+            font-style: italic;
+            font-family: 'tondo','sans-serif';
+            font-weight: bold;
+            @include md {
+                font-size: 20px;
+            }
+        }
+    }
+    &:hover {
+        background-color: rgba(0,0,0,0.05);
+        border:0.5px solid #f0f0f0;
+        border-radius: 10px;
+        .thumbnail {
+            // box-shadow: 0 5px 15px #848484 inset;
+                // border:0.5px solid rgba(0,0,0,0.2);
+                // border-bottom:0.5px solid ;
+
+            img {
+                box-shadow: 0 5px 25px #000000;
+                transform: scale(1.1);
+            }
+        }
+    }
+}
