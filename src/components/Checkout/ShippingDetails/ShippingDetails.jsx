@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from "../../../utils/context";
 import "./ShippingDetails.scss"
-const ShippingDetails = ({getAddressData ,showAddressAdd}) => {
+const ShippingDetails = ({getAddressData ,setShowAddressAdd}) => {
 
   const [fullName,setFullName] =useState();
   const [street,setStreet] =useState();
@@ -44,7 +44,7 @@ const ShippingDetails = ({getAddressData ,showAddressAdd}) => {
           if(result.ok){
             getAddressData();
             // setAddressField(result.)
-            showAddressAdd(false);
+            setShowAddressAdd(false);
           }
           // result =await result.json();
           // console.warn(result);

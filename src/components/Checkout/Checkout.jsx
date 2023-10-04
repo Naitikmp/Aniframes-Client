@@ -138,7 +138,7 @@ const Checkout = () => {
                     <button onClick={() => setShowAddressAdd(!showAddressAdd)} className="Add-Address-button">
                         Add new Address
                     </button>
-                    {showAddressAdd && <ShippingDetails getAddressData={getAddressData} showAddressAdd={showAddressAdd} />}
+                    {showAddressAdd && <ShippingDetails getAddressData={getAddressData} setShowAddressAdd={setShowAddressAdd} />}
                     {addressField ? <button className="Add-Address-button" onClick={() => navigate('/order')}>
                                             Order Now!
                             </button>
