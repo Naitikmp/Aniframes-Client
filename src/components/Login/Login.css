@@ -166,7 +166,7 @@ iframe {
   width: 100%;
   /* min-height: 100vh; */
   margin: 0 auto;
-  background: url("../../assets/login_register.png") no-repeat center center;
+  background: url("../../assets/Pi7_Image_pathway-middle-buildings-dark-sky-japan\ \(1\).jpg") no-repeat center center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -272,11 +272,11 @@ iframe {
   border-radius: 10px;
   top: 0;
   left: 0;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  background: #ff0000;
+  background: -webkit-linear-gradient(45deg, #eb8e1c, #ff0000);
+  background: -o-linear-gradient(45deg, #eb8e1c, #ff0000);
+  background: -moz-linear-gradient(45deg, #eb8e1c, #ff0000);
+  background: linear-gradient(45deg, #eb8e1c, #ff0000);
   opacity: 0;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
@@ -341,29 +341,36 @@ iframe {
   background: transparent;
   height: 60px;
   padding: 0 20px;
+  &::placeholder{
+    color: #910c00;
+  }
 }
 /*------------------------------------------------------------------
 [ Focus Input ]*/
 
 .focus-input100 {
-  position: absolute;
-  display: block;
-  color: rgba(0, 12, 179, 0.872);
-  text-shadow: 1px 0.3px rgb(0, 60, 224);
-  width: calc(100% + -30px);
-  height: calc(100% + -10px);
-  margin: -55px 15px;
+  position: relative;
+  height: 0px;
+  /* display: block; */
+  color: #c42e00;
+  font-weight: bold;
+  top: -45px;
+  left: 35px;
+  /* text-shadow: 1px 0.3px rgb(0, 60, 224); */
+  /* width: calc(100% + -30px); */
+  /* height: calc(100% + -10px); */
+  /* margin: -55px 15px; */
   /* top: 0.5px;
   right: -0px; */
   pointer-events: none;
-  border: 3px solid rgb(0, 0, 0);
+  /* border: 3px solid rgb(0, 0, 0); */
   
   border-radius: 10px;
 
   /* visibility: hidden; */
   opacity: 1;
 
-  -webkit-transition: all 0.4s;
+  -webkit-transition: all 0.4s ;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
@@ -423,7 +430,7 @@ iframe {
   padding: 0 20px;
   width: 100%;
   height: 60px;
-  background-color: #0046ea;
+  background-color: #910c00;
   border-radius: 10px;
 
   font-family: Poppins-Medium;
@@ -449,11 +456,11 @@ iframe {
   border-radius: 10px;
   top: 0;
   left: 0;
-  background: #a64bf4;
-  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
-  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  background: #ff0000;
+  background: -webkit-linear-gradient(45deg, #eb8e1c, #ff0000);
+  background: -o-linear-gradient(45deg, #eb8e1c, #ff0000);
+  background: -moz-linear-gradient(45deg, #eb8e1c, #ff0000);
+  background: linear-gradient(45deg, #eb8e1c, #ff0000);
   opacity: 0;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;

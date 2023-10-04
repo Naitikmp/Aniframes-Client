@@ -2,6 +2,8 @@ import { createContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import { fetchDataFromApi } from "./api";
 export const Context = createContext();
+const { REACT_APP_BASE_SERVER_URL } = process.env;
+
 
 const AppContext = ({ children }) => {
   const [categories, setCategories] = useState([]);
@@ -37,7 +39,7 @@ const AppContext = ({ children }) => {
   const addToCart = async (productId, quantity) => {
     try {
 
-      let result = await fetch("http://3.81.102.85:3000/cart/?productId=" + productId + '&quantity=' + quantity, {
+      let result = await fetch(REACT_APP_BASE_SERVER_URL+"/cart/?productId=" + productId + '&quantity=' + quantity, {
         method: 'post',
         // body:JSON.stringify({email,password}),
         headers: {
@@ -62,7 +64,7 @@ const AppContext = ({ children }) => {
   const increaseProductQuantity = async (productId) => {
     try {
 
-      let result = await fetch("http://3.81.102.85:3000/cart/increase?productId=" + productId, {
+      let result = await fetch(REACT_APP_BASE_SERVER_URL+"/cart/increase?productId=" + productId, {
         method: 'put',
         // body:JSON.stringify({email,password}),
         headers: {
@@ -87,7 +89,7 @@ const AppContext = ({ children }) => {
   const decreaseProductQuantity = async (productId) => {
     try {
 
-      let result = await fetch("http://3.81.102.85:3000/cart/decrease?productId=" + productId, {
+      let result = await fetch(REACT_APP_BASE_SERVER_URL+"/cart/decrease?productId=" + productId, {
         method: 'put',
         // body:JSON.stringify({email,password}),
         headers: {
@@ -112,7 +114,7 @@ const AppContext = ({ children }) => {
   const deleteProductFromCart = async (productId) => {
     try {
 
-      let result = await fetch("http://3.81.102.85:3000/cart/deleteproduct?productId=" + productId, {
+      let result = await fetch(REACT_APP_BASE_SERVER_URL+"/cart/deleteproduct?productId=" + productId, {
         method: 'DELETE',
         // body:JSON.stringify({email,password}),
         headers: {
@@ -238,7 +240,8 @@ const AppContext = ({ children }) => {
       activeLink,
       setActiveLink,
       addressField,
-      setAddressField
+      setAddressField,
+      getCartItems
     }}>{children}</Context.Provider>
 };
 

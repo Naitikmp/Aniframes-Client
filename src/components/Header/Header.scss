@@ -3,14 +3,23 @@
 .main-header {
   position: static;
   width: 100%;
-  padding: 0 20px;
+  // padding: 0 20px;
   background-color: #000000;
   color: white;
   border-bottom: 1px solid rgba(23, 23, 23, 0.1);
   z-index: 99;
 
   @include md {
-    padding: 0 40px;
+    // padding: 0 40px;
+  }
+  .header-upper-plate{
+    position: relative;
+    // left: -40px;
+    width: 100%;
+    text-align: center;
+    background-color: #ef1400;
+    font-size: 10px;
+
   }
 
   .header-content {
@@ -19,10 +28,11 @@
     justify-content: space-between;
     align-items: center;
     height: 50px;
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
-
+    margin:0 20px;
     @include md {
+      margin:0 40px;
       height: 80px;
     }
 
@@ -68,8 +78,9 @@
 
       .header-login {
         visibility: hidden;
-
+        width: 0px;
         @include md {
+          width: 100px;
           visibility: visible;
           // margin-left: 15px;
           background-color: #ef1400;
@@ -163,13 +174,13 @@
 
 
 .bm-burger-button {
-  position: absolute;
+  position: relative;
   // float: right;
-  width: 32px;
+  width: 30px;
   height: 28px;
-  right: 20px;
-  top: 13px;
-
+  right: 10px;
+  top: 1px;
+  margin-left: 13px;
   // transform: translateX(80%);
   @media screen and (max-width:768px) {
     visibility: visible;
@@ -193,6 +204,11 @@
 
   @media screen and (min-width:768px) {
     visibility: hidden;
+  }
+  
+  &:nth-child(2){
+    width: 22px;
+    margin-left: auto;
   }
 }
 

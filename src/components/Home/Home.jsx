@@ -10,11 +10,12 @@ import Newsletter from "../Footer/Newsletter/Newsletter";
 import Footer from "../Footer/Footer";
 
 const Home = () => {
-    const {categories , setCategories ,products ,setProducts} =useContext(Context)
+    const {categories , setCategories ,products ,setProducts,getCartItems} =useContext(Context)
 
     useEffect(() => {
         getCategories();
         getProducts();
+        // getCartItems();
     } , []);
 
     const getCategories = () =>{

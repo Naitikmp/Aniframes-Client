@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Context } from "../../../utils/context";
-import "./ShippingDetails.scss"
+import "./ShippingDetails.scss";
+const { REACT_APP_BASE_SERVER_URL } = process.env;
+
 const ShippingDetails = ({getAddressData ,setShowAddressAdd}) => {
 
   const [fullName,setFullName] =useState();
@@ -32,7 +34,7 @@ const ShippingDetails = ({getAddressData ,setShowAddressAdd}) => {
       try {
         // console.log(process.env.REACT_APP_BASE_SERVER_URL);
         // console.log(process.env.REACT_APP_STRIPE_APP_KEY);
-        let result = await fetch("http://3.81.102.85:3000/address/",{
+        let result = await fetch(REACT_APP_BASE_SERVER_URL + "/address/",{
             method:'POST',
             body:JSON.stringify({fullName,street,city,state,country,zipCode,phone}),
             headers: {

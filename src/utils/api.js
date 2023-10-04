@@ -1,4 +1,6 @@
 import axios from "axios";
+const { REACT_APP_BASE_SERVER_URL } = process.env;
+
 const token = localStorage.getItem("token");
 
 const params ={
@@ -12,7 +14,7 @@ const params ={
 
 export const fetchDataFromApi = async(url) => {
     try{
-        const {data} = await axios.get("http://3.81.102.85:3000" + url , params);
+        const {data} = await axios.get(REACT_APP_BASE_SERVER_URL + url , params);
         return data;
     }
 

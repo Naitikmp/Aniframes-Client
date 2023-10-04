@@ -11,8 +11,10 @@ import Footer from "../Footer/Footer";
 import { fetchDataFromApi } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
 import './Order.scss';
+const { REACT_APP_BASE_SERVER_URL } = process.env;
+
 const Order = () => {
-  const { cartSubTotal, cartItems } = useContext(Context);
+  const { cartSubTotal, cartItems ,setCartItems} = useContext(Context);
   const [showAddressAdd, setShowAddressAdd] = useState(false);
   const [shippingAddress, setShippingAddress] = useState(null);
   
@@ -68,7 +70,7 @@ const Order = () => {
     console.log(JSON.stringify({products,totalPrice,status,address}));
     try {
 
-      let result = await fetch("http://3.81.102.85:3000/order", {
+      let result = await fetch(REACT_APP_BASE_SERVER_URL + "/order", {
         method: 'post',
         body:JSON.stringify({products,totalPrice,status,address}),
         headers: {
@@ -77,7 +79,9 @@ const Order = () => {
         }
       });
       if (result.ok) {
+
         alert("order placed successfully");
+        setCartItems([]);
         navigate("/thankyou");
         console.log("Order placed Successfully");
       }

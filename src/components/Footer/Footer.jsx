@@ -2,9 +2,11 @@ import React from "react";
 import "./Footer.scss";
 import { FaLocationArrow, FaFacebookF, FaEnvelope, FaPhoneAlt, FaInstagram } from "react-icons/fa";
 import Payment from "../../assets/payments.png";
+import { useNavigate } from "react-router-dom";
 const style = { color: "#ef1400", fontSize: "1.5em", border: "1px solid grey", padding: "4px" }
 const style2 = { color: "white", fontSize: "2.5em", border: "1px solid grey", padding: "4px" }
 const Footer = () => {
+    const navigate = useNavigate();
     return (
         <div className="footer1">
             <div className="footer-content">
@@ -56,8 +58,9 @@ const Footer = () => {
 
                 <div className="col1">
                     <div className="title1">Pages</div>
-                    <span className="text1">Home</span>
-                    <span className="text1">About</span>
+                    
+                    <span className="text1" onClick={()=>navigate('/')}>Home</span>
+                    <span className="text1" onClick={()=>navigate('/AboutUs')}>About</span>
                     <span className="text1">Privacy Policy</span>
                     <span className="text1">Returns</span>
                     <span className="text1">Terms & Conditions</span>

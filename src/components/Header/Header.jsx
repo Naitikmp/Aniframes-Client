@@ -20,6 +20,8 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [showCart, setShowCart] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
+    const {setCartItems} = useContext(Context);
+
     const navigate = useNavigate();
     const { cartCount } = useContext(Context);
     const { activeLink, setActiveLink } = useContext(Context);
@@ -39,10 +41,13 @@ const Header = () => {
 
     const auth = localStorage.getItem('token');
 
-
     const logout = () => {
+    const confirmLogout = window.confirm("Are you sure you want to logout?");
+    if (confirmLogout) {
         localStorage.clear();
-        navigate('/')
+        setCartItems([]);
+        navigate("/");
+    }
     }
 
     // constructor (props) {
@@ -80,7 +85,7 @@ const Header = () => {
     return (
         <>
             <header className="main-header">
-
+                <div className="header-upper-plate">Flat 10% off on products !!<div>Limited time offer</div></div>
                 <div className="header-content" >
                     <ul className="left">
                         <li onClick={() => navigate("/")}>Home</li>
