@@ -61,6 +61,30 @@ const AppContext = ({ children }) => {
     }
   }
 
+  const deleteCart = async ()=>{
+    try {
+
+      let result = await fetch(REACT_APP_BASE_SERVER_URL+"/cart/" ,{
+        method: 'delete',
+        headers: {
+          authorization: token
+          //   'Content-Type':'application/json'
+        }
+      });
+      if (result.ok) {
+        // getCartItems();
+        console.log("Deleted cart of user from database");
+      }
+
+      else {
+        console.error(result);
+        alert(result.message);
+      }
+    } catch (error) {
+      console.error('Login error: while calling delete Cart function!', error);
+    }
+  }
+
   const increaseProductQuantity = async (productId) => {
     try {
 
@@ -241,7 +265,8 @@ const AppContext = ({ children }) => {
       setActiveLink,
       addressField,
       setAddressField,
-      getCartItems
+      getCartItems,
+      deleteCart
     }}>{children}</Context.Provider>
 };
 

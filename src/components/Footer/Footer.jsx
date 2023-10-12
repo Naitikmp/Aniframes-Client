@@ -61,7 +61,7 @@ const Footer = () => {
                     
                     <span className="text1" onClick={()=>navigate('/')}>Home</span>
                     <span className="text1" onClick={()=>navigate('/AboutUs')}>About</span>
-                    <span className="text1">Privacy Policy</span>
+                    <span className="text1" onClick={()=>navigate('/privacypolicy')}>Privacy Policy</span>
                     <span className="text1">Returns</span>
                     <span className="text1">Terms & Conditions</span>
                     <span className="text1">Contact Us</span>

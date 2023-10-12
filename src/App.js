@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Home from "./components/Home/Home";
 import Category from "./components/Category/Category";
+import Categories from "./components/Categories/Categories";
 import SingleProduct from "./components/SingleProduct/SingleProduct";
 import NewsLetter from "./components/Footer/Newsletter/Newsletter";
 import AppContext from "./utils/context";
@@ -27,6 +28,7 @@ import Update_product from "./components/Admin/Update_Product";
 import CheckOut from "./components/Checkout/Checkout";
 import Order from "./components/Order/Order";
 import ThankYou from "./components/Order/orderConfirmation/Thankyou";
+import PrivacyPolicy from "./components/Privacy Policy/PrivacyPolicy";
 // import { useLocation } from "react-router-dom";
 
 
@@ -40,7 +42,7 @@ function App() {
                 {/* <ScrollToTop /> */}
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/category" element={<Category />} />
+                    <Route path="/categories" element={<Categories />} />
                     <Route path="/category/:id" element={<Category />} />
                     <Route path="/product/:id" element={<SingleProduct />} />
                     <Route path="/AboutUs" element={<AboutUs />} />
@@ -48,6 +50,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/order" element={<Order />} />
                     <Route path="/thankyou" element={<ThankYou />} />
+                    <Route path="/privacypolicy" element={<PrivacyPolicy />} />
                     {/* <Route path="/Checkout" element={<CheckOut />} /> */}
                     <Route path="/Checkout" element={<CheckOut />}/>
                     <Route element={<PrivateComponent />} >

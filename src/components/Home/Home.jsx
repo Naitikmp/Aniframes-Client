@@ -6,7 +6,6 @@ import Products from "../Products/Products";
 import { fetchDataFromApi } from "../../utils/api";
 import { Context } from "../../utils/context";
 import Header from "../Header/Header";
-import Newsletter from "../Footer/Newsletter/Newsletter";
 import Footer from "../Footer/Footer";
 
 const Home = () => {
@@ -20,7 +19,7 @@ const Home = () => {
 
     const getCategories = () =>{
         fetchDataFromApi("/category/").then((res) => {
-            console.log(res);   
+            // console.log(res);   
             setCategories(res);
     }).catch((error) => {
         if (error.response) {
@@ -39,7 +38,7 @@ const Home = () => {
 
     const getProducts = () =>{
         fetchDataFromApi("/product/").then((res) => {
-            console.log(res);
+            // console.log(res);
             setProducts(res);
     }).catch((error) => {
         if (error.response) {

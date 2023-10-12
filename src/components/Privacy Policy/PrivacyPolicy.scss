@@ -1,0 +1,36 @@
+.content-privacy{
+    // background-color: black;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    .highlight-privacy{
+        font-size: 32px;
+        margin-bottom: 20px;
+        min-width: 100px;
+        text-align: center;
+        // margin: 0 auto 20px;
+    }
+    .line-content{
+        margin-top: 10px;
+        
+        a{
+            color: blue;
+        }
+        &::before{
+            content: "\2022";
+            margin-right: 5px;
+        }
+        
+    }
+    .line-point{
+        margin-top: 20px;
+        margin-bottom: 20px;
+        font-size: 20px;
+        // font-weight: bold;
+        text-align: center;
+    }
+    .line-content-end{
+        margin-top: 20px;
+
+    }
+}

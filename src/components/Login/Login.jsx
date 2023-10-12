@@ -7,6 +7,7 @@ import "./util.css";
 import iconGoogle from "../Login/images/icons/icon-google.png";
 import backgroundImg from "../../assets/login_register.png";
 import { Context } from "../../utils/context";
+import swal from 'sweetalert'
 const { REACT_APP_BASE_SERVER_URL } = process.env;
 
 
@@ -56,6 +57,11 @@ const Login = () => {
         // Wait for the token to be set in localStorage before proceeding
         await setTokenInLocalStorage;
         await getCartItems();
+        swal( {title: "Logged in",
+        text: "Successfully logged in! Happy Shopping frames",
+        icon: "success",
+        });
+
         if (role === "admin") {
           navigate("/dashboard");
         } else {
@@ -66,7 +72,11 @@ const Login = () => {
         // Unauthorized: Incorrect credentials
         const errorData = await result.json();
         // setError(true);
-        alert(errorData.message + "!\nPlease  enter correct Email and Password!");
+        swal( {title: "Unsuccessful login",
+        text: "Please  enter correct Email and Password",
+        icon: "error",
+        dangerMode: true,});
+        // alert(errorData.message + "!\nPlease  enter correct Email and Password!");
       } 
       else if (result.status === 400) {
         // Bad Request: Validation error
@@ -83,8 +93,12 @@ const Login = () => {
     } 
     
     catch (error) {
+      swal( {title: "Error login",
+        text: "please check your network!",
+        icon: "error",
+        dangerMode: true,});
       console.error('Login error:', error);
-      alert("please check your network!")
+      // alert("please check your network!")
       // setError(true); // Handle network errors or other exceptions
     }
   };
@@ -107,8 +121,8 @@ const Login = () => {
 
 
     <div className="container1" >
+      
       {/* <img className="bg" src={backgroundImg} alt="background-form-img"></img> */}
-
       <div className="container-login100" >
         <div className="wrap-login100 p-l-77 p-r-77 p-t-55 p-b-33">
           <form className="login100-form validate-form flex-sb flex-w" method="POST">

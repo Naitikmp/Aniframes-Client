@@ -16,7 +16,7 @@ const Category = () => {
 
     productData = productData?.data?.data;
     console.log(productData);
-    console.log(useFetch('/product/'));
+    // console.log(useFetch('/product/'));
 
     productData = productData?.filter((product)=> product.category[0]._id === id);
     console.log(productData);

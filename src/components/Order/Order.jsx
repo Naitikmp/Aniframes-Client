@@ -11,10 +11,12 @@ import Footer from "../Footer/Footer";
 import { fetchDataFromApi } from "../../utils/api";
 import { useNavigate } from "react-router-dom";
 import './Order.scss';
+import swal from 'sweetalert'
+
 const { REACT_APP_BASE_SERVER_URL } = process.env;
 
 const Order = () => {
-  const { cartSubTotal, cartItems ,setCartItems} = useContext(Context);
+  const { cartSubTotal, cartItems ,setCartItems,deleteCart} = useContext(Context);
   const [showAddressAdd, setShowAddressAdd] = useState(false);
   const [shippingAddress, setShippingAddress] = useState(null);
   
@@ -80,7 +82,12 @@ const Order = () => {
       });
       if (result.ok) {
 
-        alert("order placed successfully");
+        swal( {title: "Order placed",
+        text: "Thanks for placing your order!! further details will be shared to you shortly through email!",
+        icon: "success",
+        dangerMode: true,});
+        // alert("order placed successfully");
+        deleteCart();
         setCartItems([]);
         navigate("/thankyou");
         console.log("Order placed Successfully");

@@ -1,5 +1,5 @@
 import { useEffect, useState, useContext } from "react";
-import { useNavigate ,Link} from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 import { TbSearch } from "react-icons/tb";
 import { CgOverflow, CgShoppingCart } from "react-icons/cg";
@@ -9,6 +9,7 @@ import Search from "./Search/Search";
 import Cart from "../Cart/Cart";
 import { Context } from "../../utils/context";
 import { stack as Menu } from 'react-burger-menu'
+import swal from "sweetalert";
 
 import SignUp from "../SignUp/SignUp";
 
@@ -20,8 +21,8 @@ const Header = () => {
     const [scrolled, setScrolled] = useState(false);
     const [showCart, setShowCart] = useState(false);
     const [showSearch, setShowSearch] = useState(false);
-    const {setCartItems} = useContext(Context);
-
+    const { setCartItems } = useContext(Context);
+    // const [confirmLogout,    ]
     const navigate = useNavigate();
     const { cartCount } = useContext(Context);
     const { activeLink, setActiveLink } = useContext(Context);
@@ -41,13 +42,20 @@ const Header = () => {
 
     const auth = localStorage.getItem('token');
 
-    const logout = () => {
-    const confirmLogout = window.confirm("Are you sure you want to logout?");
-    if (confirmLogout) {
-        localStorage.clear();
-        setCartItems([]);
-        navigate("/");
-    }
+    const logout = async () => {
+
+
+        let confirmLogout = false;
+        confirmLogout = await swal("Are you sure you want to do this?", {
+            buttons: ["no", "Ok"],
+        });
+
+        console.log(confirmLogout);
+        if (confirmLogout) {
+            localStorage.clear();
+            setCartItems([]);
+            navigate("/");
+        }
     }
 
     // constructor (props) {
@@ -60,18 +68,18 @@ const Header = () => {
     const [menuOpen, setMenuOpen] = useState(false);
     function handleOnOpen() {
         setMenuOpen(true);
-        console.log(activeLink);
+        // console.log(activeLink);
         document.body.style.overflow = "hidden";
 
     }
     function handleOnClose() {
         setMenuOpen(false);
-        console.log(menuOpen);
+        // console.log(menuOpen);
         document.body.style.overflow = "scroll";
     }
 
     function closeMenu() {
-        console.log(menuOpen);
+        // console.log(menuOpen);
         setMenuOpen(false);
         // this.setState({menuOpen: false})
     }
@@ -80,7 +88,7 @@ const Header = () => {
         setActiveLink(link);
         closeMenu();
     }
-    
+
 
     return (
         <>
@@ -90,7 +98,7 @@ const Header = () => {
                     <ul className="left">
                         <li onClick={() => navigate("/")}>Home</li>
                         <li onClick={() => navigate("/AboutUs")}>About</li>
-                        <li onClick={() => navigate("/category/1")}>Categories</li>
+                        <li onClick={() => navigate("/categories")}>Categories</li>
                     </ul>
                     <div className="center" onClick={() => navigate("/")}>AniFrames</div>
                     <div className="right">
@@ -103,33 +111,34 @@ const Header = () => {
                             {!!cartCount && <span>{cartCount}</span>}
                         </span>
 
-                        {auth ? <span onClick={() => { logout(); navigate("/") }} className="header-login">Logout</span> : <span onClick={() => navigate("/login")} className="header-login">LogIn</span>}
+                        {auth ? <span onClick={() => { logout(); }} className="header-login">Logout</span> : <span onClick={() => navigate("/login")} className="header-login">LogIn</span>}
 
                         {/* <span onClick={()=>{navigate("/login")}}>Login</span> */}
 
                         <Menu right noOverlay={false} disableAutoFocus className={"hmb-menu"} isOpen={menuOpen} onOpen={handleOnOpen} onClose={handleOnClose}>
-                                
-                            <div className="menu-heading">AniFrames</div>   
-                            <div className="menu-heading-addontext">Light up your walls</div>                             
+
+                            <div className="menu-heading">AniFrames</div>
+                            <div className="menu-heading-addontext">Light up your walls</div>
 
                             <Link
                                 to="/"
                                 className={activeLink === '/' ? "active menu-item" : "menu-item"}
-                                onClick={() => handleActiveLink("/")}
+                                onClick={() =>{ handleActiveLink("/");handleOnClose()}
+                                }
                             >
                                 Home
                             </Link>
                             <Link
-                                to="/category"
-                                className={activeLink === '/category' ? "active menu-item" : "menu-item"}
-                                onClick={() => handleActiveLink("/category")}
+                                to="/categories"
+                                className={activeLink === '/categories' ? "active menu-item" : "menu-item"}
+                                onClick={() => {handleActiveLink("/categories");handleOnClose()}}
                             >
                                 Categories
                             </Link>
                             <Link
                                 to="/AboutUs"
                                 className={activeLink === '/AboutUs' ? "active menu-item" : "menu-item"}
-                                onClick={() => handleActiveLink("/AboutUs")}
+                                onClick={() => {handleActiveLink("/AboutUs");handleOnClose()}}
                             >
                                 AboutUs
                             </Link>
