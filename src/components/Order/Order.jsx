@@ -91,6 +91,9 @@ const Order = () => {
         setCartItems([]);
         navigate("/thankyou");
         console.log("Order placed Successfully");
+        // window.history.pushState(null, "", "/");
+        // window.history.replaceState({}, document.title, '/');
+
       }
 
       else {
