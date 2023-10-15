@@ -49,7 +49,7 @@ function Update_Product() {
     const formData = new FormData();
     const { id } = useParams();
     const fetchProductData = async () => {
-        await fetch("http://3.81.102.85:3000/product/byid?id=" + id, {
+        await fetch(process.env.REACT_APP_BASE_SERVER_URL+"/product/byid?id=" + id, {
             headers: {
                 Authorization: token
             }
@@ -111,7 +111,7 @@ function Update_Product() {
 
 
         try {
-            const response = await fetch("http://3.81.102.85:3000/product/?_id=" + id, {
+            const response = await fetch(process.env.REACT_APP_BASE_SERVER_URL+"/product/?_id=" + id, {
                 method: 'PUT',
                 headers: {
                     authorization: token,

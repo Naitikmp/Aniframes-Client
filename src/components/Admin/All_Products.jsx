@@ -27,7 +27,7 @@ function All_Products() {
 
     useEffect(() => {
         try {
-            fetch("http://3.81.102.85:3000/product/", {
+            fetch(process.env.REACT_APP_BASE_SERVER_URL+"/product/", {
                 method: 'GET',
                 headers: {
                     Authorization: token

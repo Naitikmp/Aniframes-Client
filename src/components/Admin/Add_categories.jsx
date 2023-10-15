@@ -41,7 +41,7 @@ function Add_categories() {
             formData.append("description",description);
             formData.append("category_photo",categoryImage);
         try {
-            let result = await fetch("http://3.81.102.85:3000/category/", {
+            let result = await fetch(process.env.REACT_APP_BASE_SERVER_URL+"/category/", {
                 method: 'POST',
                 headers: {
                     authorization: token,
@@ -65,7 +65,7 @@ function Add_categories() {
     }
 
     const fetchCategories = () => {
-        fetch("http://3.81.102.85:3000/category/", {
+        fetch(process.env.REACT_APP_BASE_SERVER_URL+"/category/", {
             headers: {
                 Authorization: token
             }

@@ -31,7 +31,7 @@ function User_Details(props) {
     useEffect(() => {
 
 
-        console.log(process.env.REACT_APP_BASE_SERVER_URL + "/admin/getuserbyid?userId=" + id);
+        // console.log(process.env.REACT_APP_BASE_SERVER_URL + "/admin/getuserbyid?userId=" + id);
 
         fetch(process.env.REACT_APP_BASE_SERVER_URL + "/admin/getuserbyid?userId=" + id, {
             headers: {

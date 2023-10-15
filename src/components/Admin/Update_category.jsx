@@ -45,7 +45,7 @@ function Update_category(props) {
 
         try {
 
-            let result = await fetch("http://3.81.102.85:3000/category/?id=" + id, {
+            let result = await fetch(process.env.REACT_APP_BASE_SERVER_URL+"/category/?id=" + id, {
                 method: 'PUT',
                 headers: {
                     authorization: token,
@@ -69,7 +69,7 @@ function Update_category(props) {
     }
 
     const fetchCategoryData = () => {
-        fetch("http://3.81.102.85:3000/category/byid?id=" + id, {
+        fetch(process.env.REACT_APP_BASE_SERVER_URL+"/category/byid?id=" + id, {
             headers: {
                 Authorization: token
             }
@@ -88,7 +88,7 @@ function Update_category(props) {
     }
 
     const fetchCategories = () => {
-        fetch("http://3.81.102.85:3000/category/", {
+        fetch(process.env.REACT_APP_BASE_SERVER_URL+"/category/", {
             headers: {
                 Authorization: token
             }

@@ -72,7 +72,7 @@ function Add_Products() {
 
 
         try {
-            const response = await fetch("http://3.81.102.85:3000/product/", {
+            const response = await fetch(process.env.REACT_APP_BASE_SERVER_URL+"/product/", {
                 method: 'POST',
                 headers: {
                     authorization: token,
