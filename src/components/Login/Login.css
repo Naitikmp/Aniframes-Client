@@ -172,7 +172,7 @@ iframe {
   -o-background-size: cover;
   background-size: cover;
   height: 100vh;
-  overflow: auto;
+  overflow: hidden;
 
 
   /* background-color: steelblue; */
@@ -181,7 +181,7 @@ iframe {
 
 .container-login100 {
   width: 100%;  
-  max-height: 80vh;
+  /* max-height: 80vh; */
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;

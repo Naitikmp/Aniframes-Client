@@ -25,6 +25,12 @@
             }
         }
     }
+    .products-skeleton {
+        gap: 10px;
+        @include md {
+            gap: 20px;
+        }
+    }
     .products {
         display: flex;
         flex-flow: wrap;

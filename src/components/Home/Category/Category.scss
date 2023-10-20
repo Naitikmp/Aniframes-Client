@@ -36,7 +36,23 @@
         display: flex;
         flex-flow: wrap;
         gap: 10px;
+        
+        .category-skeleton{
+            background-color: rgb(255, 255, 255);
+            width: 100%;
+            // width: calc(50% - 5px);
+            // cursor: pointer;
+            // overflow: hidden;
+            // display: flex;
+            // flex-direction:row;
 
+            @include md {
+                width: calc(25% - 10px);
+            }
+            .flex-1{
+                flex: 1;
+            }
+        }
         .category {
             background-color: rgb(255, 255, 255);
             width: calc(50% - 5px);

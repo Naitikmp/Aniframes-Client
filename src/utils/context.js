@@ -16,8 +16,10 @@ const AppContext = ({ children }) => {
   const [addressField, setAddressField] = useState();
 
   const token = localStorage.getItem('token');
+  const role = localStorage.getItem('role')
 
   const getCartItems = () => {
+    if(token && role!='admin'){
     fetchDataFromApi("/cart/").then((res) => {
       // console.log(res);
       setCartItems(res.cart);
@@ -34,6 +36,7 @@ const AppContext = ({ children }) => {
         console.error("Error:", error.message);
       }
     });
+  }
   }
 
   const addToCart = async (productId, quantity) => {

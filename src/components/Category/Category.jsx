@@ -38,7 +38,7 @@ const Category = () => {
                 
             </div>
         </div>
-        <Newsletter />
+        {/* <Newsletter /> */}
         <Footer />
         </>
     )

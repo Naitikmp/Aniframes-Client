@@ -4,7 +4,9 @@ import "./SignUp.css";
 import "../SignUp/bootstrap/css/bootstrap.min.css";
 import "./util.css";
 import iconGoogle from "../Login/images/icons/icon-google.png";
-import backgroundImg from "../../assets/login_register.png";
+import Footer from "../Footer/Footer";
+import Header from "../Header/Header";
+// import backgroundImg from "../../assets/login_register.png";
 const { REACT_APP_BASE_SERVER_URL } = process.env;
 
 const SignUp = () => {
@@ -84,6 +86,9 @@ const SignUp = () => {
 
   return (
 
+    <>
+    <Header />
+
     <div className="container1">
       {/* <img className="bg" src={backgroundImg} alt="background-form-img"></img> */}
 
@@ -146,73 +151,15 @@ const SignUp = () => {
                 Already a member?
               </span>
 
-              <a href="/login" className="txt2 bo1">
-                Login now
-              </a>
+              <button onClick={()=>navigate("/login")} className="txt2 bo1">Login Now</button>
+
             </div>
           </form>
         </div>
       </div>
     </div>
-
-
-
-
-    //     <div className="container">
-    //   <h1>Sign Up</h1>
-    //   <form method="POST">
-    //     <div className="form-control">
-    //         <input type="text"  required  onChange={(e)=>setName(e.target.value)}/>
-    //         {/* <label>Enter name :</label> */}
-    //         <label>
-    //         <span style={{"transitionDelay" : "0ms"}} >E</span>
-    //           <span style={{"transitionDelay": "50ms"}}>nt</span>
-    //           <span style={{"transitionDelay" : "100ms"}}>er</span>
-    //           <span style={{"transitionDelay ": "150ms"}}> </span>
-    //           <span style={{"transitionDelay" : "200ms"}}>Na</span>
-    //           <span style={{"transitionDelay" : "250ms"}}>m</span>
-    //           <span style={{"transitionDelay" : "300ms"}}>e</span>
-    //           {/* <span style={{"transitionDelay" : "350ms"}}>d</span> */}
-    //     </label>
-    //     </div>
-
-    //     <div className="form-control">
-    //       <input type="email" required  onChange={(e)=>setEmail(e.target.value)}/>
-    //       {/* <label>Enter Email :</label> */}
-    //        <label>
-    //         <span style={{"transitionDelay" : "0ms"}} >E</span>
-    //           <span style={{"transitionDelay": "50ms"}}>m</span>
-    //           <span style={{"transitionDelay" : "100ms"}}>a</span>
-    //           <span style={{"transitionDelay ": "150ms"}}>i</span>
-    //           <span style={{"transitionDelay" : "200ms"}}>l</span>
-    //     </label> 
-    //     </div>
-
-    //     <div className="form-control">
-    //       <input type="password" required onChange={(e)=>setPassword(e.target.value)}/>
-    //       {/* <label>Enter password :</label> */}
-    //       <label>
-    //         <span style={{"transitionDelay" : "0ms"}} >P</span>
-    //           <span style={{"transitionDelay": "50ms"}}>a</span>
-    //           <span style={{"transitionDelay" : "100ms"}}>s</span>
-    //           <span style={{"transitionDelay ": "150ms"}}>s</span>
-    //           <span style={{"transitionDelay" : "200ms"}}>w</span>
-    //           <span style={{"transitionDelay" : "250ms"}}>o</span>
-    //           <span style={{"transitionDelay" : "300ms"}}>r</span>
-    //           <span style={{"transitionDelay" : "350ms"}}>d</span>
-    //     </label>
-    //     </div>
-
-    //     {/* <div className="form-control">
-    //         <input type="text" required />
-    //         <label>Enter your message here :</label>
-    //     </div> */}
-
-    //     <button type="button" className="btn" onClick={collectData} >Sign Up</button>
-
-    //     {/* <!-- <p className="text">Don't have an account? <a href="#">Register</a> </p> --> */}
-    //   </form>
-    // </div>
+  <Footer />
+    </>
 
 
   );

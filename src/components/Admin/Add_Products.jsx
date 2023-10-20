@@ -76,7 +76,7 @@ function Add_Products() {
                 method: 'POST',
                 headers: {
                     authorization: token,
-                    // 'Content-Type': 'multipart/form-data'
+                    'Content-Type': 'multipart/form-data'
                 },
                 body: formData,
             });

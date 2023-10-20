@@ -8,6 +8,8 @@ import iconGoogle from "../Login/images/icons/icon-google.png";
 import backgroundImg from "../../assets/login_register.png";
 import { Context } from "../../utils/context";
 import swal from 'sweetalert'
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 const { REACT_APP_BASE_SERVER_URL } = process.env;
 
 
@@ -118,8 +120,8 @@ const Login = () => {
 
 
   return (
-
-
+    <>
+    <Header />
     <div className="container1" >
       
       {/* <img className="bg" src={backgroundImg} alt="background-form-img"></img> */}
@@ -175,9 +177,10 @@ const Login = () => {
                 Not a member?
               </span>
 
-              <a href="/signup" className="txt2 bo1">
+              {/* <a  onClick={()=>navigate('/signup')} className="txt2 bo1">
                 Sign up now
-              </a>
+              </a> */}
+              <button onClick={()=>navigate('/signup')} className="txt2 bo1">Sign Up Now</button>
             </div>
           </form>
         </div>
@@ -185,13 +188,9 @@ const Login = () => {
     </div>
 
 
+<Footer />
 
-
-
-
-
-
-
+</>
 
 
   );

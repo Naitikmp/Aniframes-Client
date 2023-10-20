@@ -26,9 +26,13 @@ import All_Products from "./components/Admin/All_Products";
 import Add_Products from "./components/Admin/Add_Products";
 import Update_product from "./components/Admin/Update_Product";
 import CheckOut from "./components/Checkout/Checkout";
-import Order from "./components/Order/Order";
+import UserOrders from "./components/UserOrders/UserOrders";
 import ThankYou from "./components/Order/orderConfirmation/Thankyou";
 import PrivacyPolicy from "./components/Privacy Policy/PrivacyPolicy";
+import TermsAndConditions from "./components/TermsAndConditions/TermsAndConditions";
+import Returns from "./components/Returns/Returns";
+import Order from "./components/Order/Order";
+import ForgotPassword from "./components/ForgotPassword/ForgotPassword";
 // import { useLocation } from "react-router-dom";
 
 
@@ -38,8 +42,6 @@ function App() {
 
         <BrowserRouter>
             <AppContext>
-                {/* <Header /> */}
-                {/* <ScrollToTop /> */}
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/categories" element={<Categories />} />
@@ -48,11 +50,14 @@ function App() {
                     <Route path="/AboutUs" element={<AboutUs />} />
                     <Route path="/signup" element={<SignUp />} />
                     <Route path="/login" element={<Login />} />
-                    <Route path="/order" element={<Order />} />
+                    <Route path="/userorders" element={<UserOrders />} />
                     <Route path="/thankyou" element={<ThankYou />} />
                     <Route path="/privacypolicy" element={<PrivacyPolicy />} />
-                    {/* <Route path="/Checkout" element={<CheckOut />} /> */}
+                    <Route path="/order" element={<Order />} />
+                    <Route path="/termsandconditions" element={<TermsAndConditions />} />
+                    <Route path="/returns" element={<Returns />} />
                     <Route path="/Checkout" element={<CheckOut />}/>
+                    <Route path="/forgotpassword" element={<ForgotPassword />}/>
                     <Route element={<PrivateComponent />} >
                         <Route path="/dashboard" element={<Dashboard />} />
                         <Route path="/Add_menu" element={<Add_menu />} />
@@ -69,8 +74,6 @@ function App() {
                     </Route>
 
                 </Routes>
-                {/* <NewsLetter />
-                <Footer /> */}
             </AppContext>
         </BrowserRouter >
 

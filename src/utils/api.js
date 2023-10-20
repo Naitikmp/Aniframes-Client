@@ -21,6 +21,14 @@ export const fetchDataFromApi = async(url) => {
     catch(error)  {
         if (error.response) {
           // The server responded with a status code outside the 2xx range
+          if (url === '/cart/' && error.response.status === 404) {
+            // Handle the specific case of a 404 error for '/cart/'
+            // console.error("Cart not found (HTTP 404)");
+            // You can choose to throw an error or return an error message here
+            throw new Error("Cart not found (HTTP 404)");
+          }
+
+
           console.error("Server Response Status:", error.response.status);
           console.error("Server Response Data:", error.response.data);
         } else if (error.request) {

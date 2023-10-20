@@ -40,7 +40,7 @@ const Footer = () => {
                         <a href="https://www.facebook/aniframes.com">
                             <FaFacebookF style={style2} />
                         </a>
-                        <a href="https://www.instagram.com/naitik_p44">
+                        <a href="https://www.instagram.com/ani_frames20">
                             <FaInstagram style={style2} />
                         </a>
                     </div>
@@ -61,9 +61,10 @@ const Footer = () => {
                     
                     <span className="text1" onClick={()=>navigate('/')}>Home</span>
                     <span className="text1" onClick={()=>navigate('/AboutUs')}>About</span>
+                    <span className="text1" onClick={()=>navigate('/userorders')}>Your Orders</span>
                     <span className="text1" onClick={()=>navigate('/privacypolicy')}>Privacy Policy</span>
-                    <span className="text1">Returns</span>
-                    <span className="text1">Terms & Conditions</span>
+                    <span className="text1" onClick={()=>navigate('/returns')}>Returns</span>
+                    <span className="text1" onClick={()=>navigate('/termsandconditions')}>Terms & Conditions</span>
                     <span className="text1">Contact Us</span>
                 </div>
             </div>
